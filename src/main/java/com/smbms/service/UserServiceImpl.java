@@ -66,7 +66,7 @@ public class UserServiceImpl implements UserService {
         //分页查询用户User列表
         List<User> list = userMapper.selectByExample(example);
         //封装UserVo列表用于返回前端
-        List<UserVo> userVoList = new ArrayList<>();
+        List<UserVo> userVoList = new ArrayList<UserVo>();
         UserVo userVo;
         for (User user : list) {
             userVo = new UserVo();
@@ -81,7 +81,7 @@ public class UserServiceImpl implements UserService {
             //把每个userVo添加到新的list
             userVoList.add(userVo);
         }
-        PageInfo<UserVo> userPageInfo = new PageInfo<>(userVoList);
+        PageInfo<UserVo> userPageInfo = new PageInfo<UserVo>(userVoList);
         return userPageInfo;
     }
 }
